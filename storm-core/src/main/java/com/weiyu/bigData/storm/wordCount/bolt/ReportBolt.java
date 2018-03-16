@@ -1,29 +1,29 @@
-package com.gome.bigData.demo.bolt;
+package com.weiyu.bigData.storm.wordCount.bolt;
 
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
-import org.apache.storm.topology.IRichBolt;
 import org.apache.storm.topology.OutputFieldsDeclarer;
+import org.apache.storm.topology.base.BaseRichBolt;
 import org.apache.storm.tuple.Tuple;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author weiyu@gomeholdings.com
  * @description
  * @create 2017/6/28
  */
-public class ReportBolt implements IRichBolt {
+public class ReportBolt extends BaseRichBolt {
     private static final Logger log = LoggerFactory.getLogger(ReportBolt.class);
     private Map<String, Long> counts = null;
 
     @Override
     public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
-        counts = new HashMap<>();
+        counts = new ConcurrentHashMap<>();
     }
 
     @Override

@@ -1,14 +1,11 @@
-package com.gome.bigData.demo.topology;
+package com.weiyu.bigData.storm.wordCount.topology;
 
-import com.gome.bigData.demo.bolt.ReportBolt;
-import com.gome.bigData.demo.bolt.SplitSentenceBolt;
-import com.gome.bigData.demo.bolt.WordCountBolt;
-import com.gome.bigData.demo.spout.SentenceSpout;
+import com.weiyu.bigData.storm.wordCount.bolt.ReportBolt;
+import com.weiyu.bigData.storm.wordCount.bolt.SplitSentenceBolt;
+import com.weiyu.bigData.storm.wordCount.bolt.WordCountBolt;
+import com.weiyu.bigData.storm.wordCount.spout.SentenceSpout;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
-import org.apache.storm.generated.AlreadyAliveException;
-import org.apache.storm.generated.AuthorizationException;
-import org.apache.storm.generated.InvalidTopologyException;
 import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.tuple.Fields;
 import org.slf4j.Logger;
@@ -31,7 +28,7 @@ public class WordCountTopology {
     //拓扑名称
     private static final String TOPOLOGY_NAME = "word-count-topology";
 
-    public static void main(String[] args) throws InterruptedException, InvalidTopologyException, AuthorizationException, AlreadyAliveException {
+    public static void main(String[] args) {
         log.info(".........begining.......");
         //各组件的实例
         SentenceSpout sentenceSpout = new SentenceSpout();
@@ -52,7 +49,6 @@ public class WordCountTopology {
 
         //配置
         Config config = new Config();
-
         /*建立本地集群,利用LocalCluster,storm在程序启动时会在本地自动建立一个集群,不需要用户自己再搭建,方便本地开发和debug*/
         LocalCluster cluster = new LocalCluster();
         //建立拓扑实例，并提交到本地集群运行

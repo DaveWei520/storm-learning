@@ -4,42 +4,41 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gome.bigData</groupId>
-    <artifactId>storm</artifactId>
+    <groupId>com.weiyu.bigData</groupId>
+    <artifactId>storm-learning</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <modules>
-        <module>storm-demo</module>
+        <module>storm-core</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <storm>1.1.0</storm>
-        <maven>3.6.1</maven>
-        <version>1.0-SNAPSHOT</version>
+        <storm.verion>1.2.1</storm.verion>
+        <maven.verion>3.6.1</maven.verion>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.storm</groupId>
             <artifactId>storm-core</artifactId>
-            <version>${storm}</version>
+            <version>${storm.verion}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.storm</groupId>
             <artifactId>storm-kafka</artifactId>
-            <version>1.1.0</version>
+            <version>${storm.verion}</version>
         </dependency>
 
 
         <dependency>
             <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.9.2</artifactId>
-            <version>0.8.2.2</version>
+            <artifactId>kafka_2.12</artifactId>
+            <version>1.0.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.zookeeper</groupId>
