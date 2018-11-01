@@ -1,4 +1,4 @@
-package com.weiyu.bigData.storm.wordCount.spout;
+package willem.weiyu.bigData.core.wordCount.spout;
 
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
@@ -10,12 +10,17 @@ import org.apache.storm.tuple.Values;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * @author weiyu
+ * @description
+ * @create 2017/6/28
+ */
 public class SentenceSpout extends BaseRichSpout {
     private SpoutOutputCollector collector;
     private String[] sentences = {
             "Apache Storm is a free and open source distributed realtime computation system",
-            "Apache Spark is a fast and general engine for large-scale data processing",
-            "Apache Flink is an open-source stream processing framework",
+            "Spark Streaming is an extension of the core Spark API that enables scalable high-throughput fault-tolerant stream processing of live data streams",
+            "Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams",
             "Apache Beam is an advanced unified programming model"};
     private Random rand;
     @Override

@@ -9,16 +9,12 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
-    <modules>
-        <module>storm-core</module>
-        <module>trident-core</module>
-    </modules>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <storm.verion>1.2.1</storm.verion>
+        <storm.verion>1.2.2</storm.verion>
+        <kafka.version>2.0.0</kafka.version>
         <maven.verion>3.6.1</maven.verion>
     </properties>
 
@@ -39,7 +35,7 @@
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka_2.12</artifactId>
-            <version>1.0.1</version>
+            <version>${kafka.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.zookeeper</groupId>
@@ -56,4 +52,19 @@
             </exclusions>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.verion}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerVersion>${java.version}</compilerVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

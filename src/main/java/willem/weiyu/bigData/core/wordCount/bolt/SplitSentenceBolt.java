@@ -1,4 +1,4 @@
-package com.weiyu.bigData.storm.wordCount.bolt;
+package willem.weiyu.bigData.core.wordCount.bolt;
 
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
@@ -11,7 +11,7 @@ import org.apache.storm.tuple.Values;
 import java.util.Map;
 
 /**
- * @author weiyu@gomeholdings.com
+ * @author weiyu
  * @description
  * @create 2017/6/28
  */

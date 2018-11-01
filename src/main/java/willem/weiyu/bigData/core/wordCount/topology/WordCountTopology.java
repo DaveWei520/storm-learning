@@ -1,9 +1,9 @@
-package com.weiyu.bigData.storm.wordCount.topology;
+package willem.weiyu.bigData.core.wordCount.topology;
 
-import com.weiyu.bigData.storm.wordCount.bolt.ReportBolt;
-import com.weiyu.bigData.storm.wordCount.bolt.SplitSentenceBolt;
-import com.weiyu.bigData.storm.wordCount.bolt.WordCountBolt;
-import com.weiyu.bigData.storm.wordCount.spout.SentenceSpout;
+import willem.weiyu.bigData.core.wordCount.bolt.ReportBolt;
+import willem.weiyu.bigData.core.wordCount.bolt.SplitSentenceBolt;
+import willem.weiyu.bigData.core.wordCount.bolt.WordCountBolt;
+import willem.weiyu.bigData.core.wordCount.spout.SentenceSpout;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.topology.TopologyBuilder;
@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author weiyu@gomeholdings.com
+ * @author weiyu
  * @description
  * @create 2017/6/27
  */
@@ -29,7 +29,7 @@ public class WordCountTopology {
     private static final String TOPOLOGY_NAME = "word-count-topology";
 
     public static void main(String[] args) {
-        log.info(".........begining.......");
+        log.info("******begining******");
         //各组件的实例
         SentenceSpout sentenceSpout = new SentenceSpout();
         SplitSentenceBolt splitSentenceBolt = new SplitSentenceBolt();

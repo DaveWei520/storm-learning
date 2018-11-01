@@ -1,4 +1,4 @@
-package com.weiyu.bigData.trident;
+package willem.weiyu.bigData.trident;
 
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
@@ -20,6 +20,11 @@ import org.apache.storm.trident.testing.Split;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Values;
 
+/**
+ * @author weiyu
+ * @description
+ * @create 2017/6/28
+ */
 public class WordCountTrident {
 
     public static void main(String[] args) throws InvalidTopologyException, AuthorizationException, AlreadyAliveException, InterruptedException {

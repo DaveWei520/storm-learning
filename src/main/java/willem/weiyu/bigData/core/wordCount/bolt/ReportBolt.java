@@ -1,4 +1,4 @@
-package com.weiyu.bigData.storm.wordCount.bolt;
+package willem.weiyu.bigData.core.wordCount.bolt;
 
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author weiyu@gomeholdings.com
+ * @author weiyu
  * @description
  * @create 2017/6/28
  */
@@ -54,7 +54,7 @@ public class ReportBolt extends BaseRichBolt {
         log.info("--------------------------begin-------------------");
         Set<String> words = counts.keySet();
         for (String word : words) {
-            log.info("@report-bolt@: " + word + " ---> " + counts.get(word));
+            log.info("@report-bolt@: " + word + " -> " + counts.get(word));
         }
         log.info("--------------------------end---------------------");
     }
