@@ -25,11 +25,11 @@
             <version>${storm.verion}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.storm</groupId>
-            <artifactId>storm-kafka</artifactId>
-            <version>${storm.verion}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.storm</groupId>-->
+            <!--<artifactId>storm-kafka</artifactId>-->
+            <!--<version>${storm.verion}</version>-->
+        <!--</dependency>-->
 
 
         <dependency>
@@ -50,6 +50,14 @@
                     <artifactId>log4j</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.storm/storm-kafka-client -->
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-kafka-client</artifactId>
+            <version>${storm.verion}</version>
+            <!--<scope>provided</scope>-->
         </dependency>
     </dependencies>
 
